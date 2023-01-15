@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'preact/hooks'
-import './app.css'
+import { useEffect } from 'preact/hooks'
 import { findAll } from './lib/messages'
 import { useRecoilState } from 'recoil'
 import messagesState from './store/messagesState'
@@ -12,7 +11,7 @@ export function App () {
     findAll()
   }, [])
   return (
-    <Flex>
+    <div>
       <MessageList messages={messages} />
       <button
         onClick={() =>
@@ -24,6 +23,6 @@ export function App () {
       >
         Enviar
       </button>
-    </Flex>
+    </div>
   )
 }
